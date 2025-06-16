@@ -48,11 +48,27 @@ public class BurgerReceiptTest {
     }
 
     @Mock Bun bun;
+    @Mock private Ingredient cheese;
+    @Mock private Ingredient sauce;
+    @Mock private Ingredient cutlet;
 
     @Before
     public void setUp() {
         MockitoAnnotations.openMocks(this);
         when(bun.getPrice()).thenReturn(100f);
+
+        when(cheese.getName()).thenReturn("cheese");
+        when(cheese.getType()).thenReturn(IngredientType.FILLING);
+        when(cheese.getPrice()).thenReturn(50f);
+
+        when(sauce.getName()).thenReturn("sauce");
+        when(sauce.getType()).thenReturn(IngredientType.SAUCE);
+        when(sauce.getPrice()).thenReturn(30f);
+
+        when(cutlet.getName()).thenReturn("cutlet");
+        when(cutlet.getType()).thenReturn(IngredientType.FILLING);
+        when(cutlet.getPrice()).thenReturn(70f);
+
     }
 
     @Test
@@ -70,6 +86,39 @@ public class BurgerReceiptTest {
         Assert.assertEquals(normalizedExpected, normalizedActual);
     }
 
+    @Test
+    public void removeIngredient_shouldRemoveFromList() {
+        Burger burger = new Burger();
+        burger.setBuns(bun);
+        ingredients.forEach(burger::addIngredient);
+
+        if (!ingredients.isEmpty()) {
+            int initialSize = burger.ingredients.size();
+            Ingredient toRemove = burger.ingredients.get(0);
+
+            burger.removeIngredient(0);
+
+            Assert.assertEquals(initialSize - 1, burger.ingredients.size());
+            Assert.assertFalse(burger.ingredients.contains(toRemove));
+        }
+    }
+
+    @Test
+    public void moveIngredient_shouldMoveElementToNewIndex() {
+
+        Burger burger = new Burger();
+        burger.setBuns(bun);
+        burger.addIngredient(cheese);
+        burger.addIngredient(sauce);
+        burger.addIngredient(cutlet);
+
+        burger.moveIngredient(0, 2);
+
+        Assert.assertEquals(sauce, burger.ingredients.get(0));
+        Assert.assertEquals(cutlet, burger.ingredients.get(1));
+        Assert.assertEquals(cheese, burger.ingredients.get(2));
+    }
+
     private static Ingredient createMockIngredient(String name, IngredientType type, float price) {
         Ingredient ingredient = mock(Ingredient.class);
         when(ingredient.getName()).thenReturn(name);
@@ -77,4 +126,5 @@ public class BurgerReceiptTest {
         when(ingredient.getPrice()).thenReturn(price);
         return ingredient;
     }
+
 }

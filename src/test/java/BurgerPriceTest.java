@@ -65,4 +65,14 @@ public class BurgerPriceTest {
         float actualSum = burger.getPrice();
         Assert.assertEquals(expectedSum, actualSum, 0.01f);
     }
+
+    @Test
+    public void getPrice_shouldReturnDoubleBunPrice() {
+        Bun realBun = new Bun("Real Bun", 100f);
+        Burger burger = new Burger();
+        burger.setBuns(realBun);
+
+        float actualPrice = burger.getPrice();
+        Assert.assertEquals(200f, actualPrice, 0.001f);
+    }
 }

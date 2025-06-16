@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="BurgerReceiptTest" time="0.017" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="BurgerReceiptTest" time="0.056" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk11.0.26_4\bin"/>
-    <property name="sun.java.command" value="C:\Users\sofaf\AppData\Local\Temp\surefire15681002092083455879\surefirebooter14159440475533313973.jar C:\Users\sofaf\AppData\Local\Temp\surefire15681002092083455879 2025-06-15T19-31-03_492-jvmRun1 surefire171166331093586718tmp surefire_09046260074661852422tmp"/>
+    <property name="sun.java.command" value="C:\Users\sofaf\AppData\Local\Temp\surefire13654095069634777709\surefirebooter13496403402327790701.jar C:\Users\sofaf\AppData\Local\Temp\surefire13654095069634777709 2025-06-16T17-59-42_666-jvmRun1 surefire7606839837629337193tmp surefire_0604098706704041446tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\docs\QA\Diplom\QA-java-diplom-1\target\test-classes;D:\docs\QA\Diplom\QA-java-diplom-1\target\classes;C:\Users\sofaf\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\sofaf\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\sofaf\.m2\repository\org\mockito\mockito-core\3.12.4\mockito-core-3.12.4.jar;C:\Users\sofaf\.m2\repository\net\bytebuddy\byte-buddy\1.11.13\byte-buddy-1.11.13.jar;C:\Users\sofaf\.m2\repository\net\bytebuddy\byte-buddy-agent\1.11.13\byte-buddy-agent-1.11.13.jar;C:\Users\sofaf\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\sofaf\AppData\Local\Temp\surefire15681002092083455879\surefirebooter14159440475533313973.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\sofaf\AppData\Local\Temp\surefire13654095069634777709\surefirebooter13496403402327790701.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.26+4-LTS"/>
@@ -61,7 +61,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="getReceipt_shouldReturnFormattedReceipt[Bun: White Bun, Ingredients: []]" classname="BurgerReceiptTest" time="0"/>
-  <testcase name="getReceipt_shouldReturnFormattedReceipt[Bun: Black Bun, Ingredients: [Mock for Ingredient, hashCode: 1114835192]]" classname="BurgerReceiptTest" time="0"/>
-  <testcase name="getReceipt_shouldReturnFormattedReceipt[Bun: Red Bun, Ingredients: [Mock for Ingredient, hashCode: 1411675719]]" classname="BurgerReceiptTest" time="0.003"/>
+  <testcase name="getReceipt_shouldReturnFormattedReceipt[Bun: White Bun, Ingredients: []]" classname="BurgerReceiptTest" time="0.007"/>
+  <testcase name="moveIngredient_shouldMoveElementToNewIndex[Bun: White Bun, Ingredients: []]" classname="BurgerReceiptTest" time="0.007"/>
+  <testcase name="removeIngredient_shouldRemoveFromList[Bun: White Bun, Ingredients: []]" classname="BurgerReceiptTest" time="0"/>
+  <testcase name="getReceipt_shouldReturnFormattedReceipt[Bun: Black Bun, Ingredients: [Mock for Ingredient, hashCode: 1083650811]]" classname="BurgerReceiptTest" time="0.01"/>
+  <testcase name="moveIngredient_shouldMoveElementToNewIndex[Bun: Black Bun, Ingredients: [Mock for Ingredient, hashCode: 1083650811]]" classname="BurgerReceiptTest" time="0.006"/>
+  <testcase name="removeIngredient_shouldRemoveFromList[Bun: Black Bun, Ingredients: [Mock for Ingredient, hashCode: 1083650811]]" classname="BurgerReceiptTest" time="0.004"/>
+  <testcase name="getReceipt_shouldReturnFormattedReceipt[Bun: Red Bun, Ingredients: [Mock for Ingredient, hashCode: 121463477]]" classname="BurgerReceiptTest" time="0.006"/>
+  <testcase name="moveIngredient_shouldMoveElementToNewIndex[Bun: Red Bun, Ingredients: [Mock for Ingredient, hashCode: 121463477]]" classname="BurgerReceiptTest" time="0"/>
+  <testcase name="removeIngredient_shouldRemoveFromList[Bun: Red Bun, Ingredients: [Mock for Ingredient, hashCode: 121463477]]" classname="BurgerReceiptTest" time="0.004"/>
 </testsuite>

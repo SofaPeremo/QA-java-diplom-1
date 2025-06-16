@@ -7,8 +7,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import praktikum.Bun;
 import praktikum.Burger;
 
-import static org.mockito.Mockito.*;
-
 @RunWith(MockitoJUnitRunner.class)
 public class BunTests {
 
@@ -27,15 +25,4 @@ public class BunTests {
         Bun bun = new Bun("Red bun", 100f);
         Assert.assertEquals("Red bun", bun.getName());
     }
-
-    @Test
-    public void getPrice_shouldReturnDoubleBunPrice() {
-        Bun realBun = new Bun("Real Bun", 100f);
-        Burger burger = new Burger();
-        burger.setBuns(realBun);
-
-        float actualPrice = burger.getPrice();
-        Assert.assertEquals(200f, actualPrice, 0.001f);
-    }
-
 }
